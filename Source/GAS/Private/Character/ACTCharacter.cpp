@@ -55,6 +55,7 @@ void AACTCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompon
 	PlayerInputComponent->BindAxis(FName("Turn"),this,&AACTCharacter::Turn);
 	PlayerInputComponent->BindAxis(FName("LookUp"),this,&AACTCharacter::LookUp);
 
+	PlayerInputComponent->BindAction(FName("Jump"),IE_Pressed,this,&ACharacter::Jump);//回调函数绑定到跳跃动作映射
 }
 
 void AACTCharacter::MoveForward(float Value)
