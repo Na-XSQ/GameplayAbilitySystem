@@ -11,6 +11,8 @@ AMyPlayerController::AMyPlayerController()
 	bReplicates = true;//打开网络同步
 }
 
+
+
 void AMyPlayerController::BeginPlay()
 {
 	Super::BeginPlay();
@@ -36,6 +38,11 @@ void AMyPlayerController::SetupInputComponent()
 	UEnhancedInputComponent* EnhancedInputComponent = CastChecked<UEnhancedInputComponent>(InputComponent);
 
 	EnhancedInputComponent->BindAction(MoveAction,ETriggerEvent::Triggered,this,&AMyPlayerController::Move);//绑定MoveAction输入动作到Move方法中，当玩家触发时，Move被调用
+
+}
+
+void AMyPlayerController::MoveForward(float value)
+{
 }
 
 void AMyPlayerController::Move(const FInputActionValue& InputActionValue)//处理玩家移动
@@ -54,4 +61,13 @@ void AMyPlayerController::Move(const FInputActionValue& InputActionValue)//处�
 	}
 	
 	
+}
+
+void AMyPlayerController::HandleMouseMovement(float Value, float DeltaTime)
+{
+	if(Value!=0.0f)
+	{
+		//获取相机组件
+
+	}
 }

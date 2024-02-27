@@ -21,7 +21,7 @@ public:
 protected:
 	virtual void BeginPlay() override;
 	virtual void SetupInputComponent() override;
-
+	void MoveForward(float value);
 private:
 	UPROPERTY(EditAnywhere,Category="Input")
 	TObjectPtr<UInputMappingContext>PlayerContext;//定义输入映射
@@ -30,4 +30,5 @@ private:
 	TObjectPtr<UInputAction>MoveAction;//定义玩家触发动作
 	
 	void Move(const  FInputActionValue& InputActionValue);//结构体，包含输入动作的值
+	void HandleMouseMovement(float Value,float DeltaTime);//鼠标移动控制相机
 };

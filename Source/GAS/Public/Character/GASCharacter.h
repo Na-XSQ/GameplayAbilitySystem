@@ -13,5 +13,6 @@ UCLASS()
 class GAS_API AGASCharacter : public AGASCharacterBase
 {
 	GENERATED_BODY()
-
+public:
+	AGASCharacter();
 };
